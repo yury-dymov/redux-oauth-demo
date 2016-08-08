@@ -1,5 +1,6 @@
 import express                                                from 'express';
 import cookieParser                                           from 'cookie-parser';
+import compression                                            from 'compression';
 
 import React                                                  from 'react';
 import ReactDOM                                               from 'react-dom/server';
@@ -19,6 +20,7 @@ const app = express();
 
 app.use('/public', express.static('public'));
 app.use(cookieParser());
+app.use(compression());
 
 app.use((req, res) => {
   const store             = configureStore();
