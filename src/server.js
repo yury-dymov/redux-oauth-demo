@@ -18,6 +18,8 @@ import now                                                    from 'lodash/now';
 
 const app = express();
 
+const assetUrl = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:7050'
+
 app.use('/public', express.static('public'));
 app.use(cookieParser());
 app.use(compression());
@@ -74,6 +76,8 @@ app.use((req, res) => {
   }));
 });
 
+
+
 function renderHTML({ componentHTML, initialState }) {
   return `
     <!DOCTYPE html>
@@ -82,14 +86,14 @@ function renderHTML({ componentHTML, initialState }) {
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Redux OAuth Demo</title>
-          <link rel='stylesheet' href='/public/bundle.css' type='text/css' />
+          <link rel='stylesheet' href='${assetUrl}/public/bundle.css' type='text/css' />
       </head>
       <body>
         <script type="application/javascript">
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
-        </script>                
+        </script>
         <div id="react-view">${componentHTML}</div>
-        <script type="application/javascript" src="/public/bundle.js"></script>
+        <script type="application/javascript" src="${assetUrl}/public/bundle.js"></script>
       </body>
     </html>
   `;

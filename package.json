@@ -38,6 +38,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "bluebird": "^3.4.1",
+    "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
@@ -53,12 +54,20 @@
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
     "redux-connect": "^2.4.0",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.0.11",
+    "redux-immutablejs": "0.0.8",
     "redux-oauth": "^2.0.3",
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "nodemon": "^1.10.0",
+    "postcss-loader": "^0.13.0",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }

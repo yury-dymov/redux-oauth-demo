@@ -1,10 +1,12 @@
-import { createStore, applyMiddleware, combineReducers }  from 'redux';
-import thunk                                              from 'redux-thunk';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+import thunk                                                      from 'redux-thunk';
 
-import { authStateReducer as auth }                       from 'redux-oauth';
-import { routerReducer as routing }                       from 'react-router-redux';
-import { reducer as reduxAsyncConnect }                   from 'redux-connect';
-import test                                               from './reducers/test';
+import { authStateReducer as auth }                               from 'redux-oauth';
+import { routerReducer as routing }                               from 'react-router-redux';
+import { reducer as reduxAsyncConnect }                           from 'redux-connect';
+
+import DevTools                                                   from 'components/DevTools';
+import test                                                       from './reducers/test';
 
 export default function configureStore(initialState = {}) {
   return createStore(
@@ -15,6 +17,9 @@ export default function configureStore(initialState = {}) {
       reduxAsyncConnect
     }),
     initialState,
-    applyMiddleware(thunk)
+    compose(
+      applyMiddleware(thunk),
+      DevTools.instrument()
+    )
   );
 }

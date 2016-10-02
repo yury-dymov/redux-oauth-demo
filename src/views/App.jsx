@@ -1,23 +1,27 @@
-import React, { Component, PropTypes }  from 'react';
-import Grid                             from 'react-bootstrap/lib/Grid';
+import React, { PropTypes }  from 'react';
+import Grid                  from 'react-bootstrap/lib/Grid';
 
-import AppBar                           from 'containers/AppBarContainer';
+import AppBar                from 'containers/AppBarContainer';
+import DevTools              from 'components/DevTools';
 
-export default class App extends Component {
-  static propTypes = {
-    children:       PropTypes.any,
-  };
+import './bundle.css';
 
-  render() {
-    const { children } = this.props;
+const propTypes = {
+  children: PropTypes.any
+};
 
-    return (
-      <div id='app-view'>
-        <AppBar />
-        <Grid>
-          {children}
-        </Grid>
-      </div>
-    );
-  }
+function App({ children }) {
+  return (
+    <div>
+      <AppBar />
+      <Grid>
+        {children}
+      </Grid>
+      <DevTools />
+    </div>
+  );
 }
+
+App.propTypes = propTypes;
+
+export default App;
