@@ -9,7 +9,7 @@ authentication library.
 
 In this demo you can authenticate against OAuth2 providers, perform client-side and server-side API requests, which require authentication.
 
-For client-side only example please check repository [redux-oauth-demo](https://github.com/yury-dymov/redux-oauth-client-demo).
+For client-side only example please check repository [redux-oauth-client-demo](https://github.com/yury-dymov/redux-oauth-client-demo).
 
 Backend source code can be found [here](https://github.com/yury-dymov/redux-oauth-backend-demo).
 
