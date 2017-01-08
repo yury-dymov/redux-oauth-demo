@@ -92,7 +92,8 @@ function renderHTML({ componentHTML, initialState }) {
         <script type="application/javascript">
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
         </script>
-        <div id="react-view"><div>${componentHTML}</div></div>
+        <div id="react-view">${componentHTML}</div>
+        <div id="redux-dev-tools"></div>
         <script type="application/javascript" src="${assetUrl}/public/bundle.js"></script>
       </body>
     </html>

@@ -29,3 +29,6 @@ match(
     document.getElementById('react-view')
   )
 );
+
+ReactDOM.render(<DevTools store={store} />, document.getElementById('redux-dev-tools'));
+

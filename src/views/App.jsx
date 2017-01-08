@@ -2,7 +2,6 @@ import React, { PropTypes }  from 'react';
 import Grid                  from 'react-bootstrap/lib/Grid';
 
 import AppBar                from 'containers/AppBarContainer';
-import DevTools              from 'components/DevTools';
 
 import './bundle.css';
 
@@ -17,7 +16,6 @@ function App({ children }) {
       <Grid>
         {children}
       </Grid>
-      <DevTools />
     </div>
   );
 }
