@@ -4,10 +4,37 @@
   "description": "Universal / Isomorphic demo for redux-oauth library",
   "main": "public/bundle.js",
   "scripts": {
-    "build": "NODE_ENV='production' webpack -p",
-    "start": "NODE_ENV='production' NODE_PATH=./src node server/server.js",
-    "nodemon": "NODE_PATH=./src nodemon server/server.js",
-    "webpack-devserver": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 7050 --host 0.0.0.0"
+    "build": "better-npm-run build",
+    "start": "better-npm-run start",
+    "nodemon": "better-npm-run nodemon",
+    "webpack-devserver": "better-npm-run webpack-devserver"
+  },
+  "betterScripts": {
+    "build": {
+      "command": "webpack -p",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "start": {
+      "command": "node server/server.js",
+      "env": {
+        "NODE_ENV": "production",
+        "NODE_PATH": "./src"
+      }
+    },
+    "nodemon": {
+      "command": "nodemon server/server.js",
+      "env": {
+        "NODE_PATH": "./src"
+      }
+    },   
+    "webpack-devserver": {
+      "command": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 7050 --host 0.0.0.0",
+      "env": {
+        "BABEL_ENV": "dev"
+      }
+    }
   },
   "repository": {
     "type": "git",
@@ -63,6 +90,7 @@
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",
+    "better-npm-run": "0.0.14",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "nodemon": "^1.10.0",
